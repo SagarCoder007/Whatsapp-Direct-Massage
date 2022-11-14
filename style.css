@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#header {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.wa_logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+
+.country {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.number {
+  display: flex;
+  justify-content: space-between;
+}
