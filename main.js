@@ -2,36 +2,102 @@ const country = document.getElementById("country")
 const phone = document.getElementById("phone")
 const button = document.getElementById("btn")
 
-
 button.addEventListener("click", () => {
-  const wa = "https://Wa.me/"
+  event.preventDefault()
 
-  if (country.value == "") {
-    country.style.border = "2px solid red"
+  phoneVal = phone.value
+  countryVal = country.value
 
-    event.preventDefault()
-  }
+  if (phoneVal.trim() != 0) {
+    country.style.border = "1px solid red"
+    phone.style.border = "1px solid red"
+    let get = localStorage.getItem(JSON.parse(1))
 
-  else if (phone.value == "") {
-    event.preventDefault()
-    phone.style.border = "2px solid red"
+    if (get == null) {
+      data = []
+
+    }
+
+    else {
+      data = JSON.parse(get)
+
+
+    }
+    data.push("+" + countryVal + phoneVal)
+    let set = localStorage.setItem(1, JSON.stringify(data))
+
+
   }
 
   else {
-    event.preventDefault()
-    const output = wa + "+" + country.value + phone.value
-    country.style.border = "1px solid black"
-    phone.style.border = "1px solid black"
-    document.getElementById("link").href = output
-    country.value = null
-    phone.value = null
-
-    let data = []
-    data.push(output)
-    console.log(data)
-
+    phone.style.border = "1px solid red"
+    country.style.border = "1px solid red"
   }
 
 
 
+
+
+
+
+
+
+  sshow()
+
 })
+
+
+
+
+
+
+
+
+let sshow = (() => {
+
+  let get = localStorage.getItem(JSON.parse(1))
+
+  if (get == null) {
+    data = []
+  }
+
+  else {
+    data = JSON.parse(get)
+  }
+
+  let insert = ""
+
+  data.forEach((item, index) => {
+    let table = document.getElementById("table")
+
+    insert += `<tr>
+            <td>${index+1}</td>
+            <td id="text">${item}</td>
+            <td onClick="edit(${index})"><i class="fa-brands fa-whatsapp"></i></td>
+            <td onClick="del(${index})"><i class="fa-solid fa-trash"></i></td>
+          </tr>`
+
+    table.innerHTML = insert
+
+  })
+
+})
+
+sshow()
+
+
+
+
+let del = (index) => {
+  let get = localStorage.getItem(JSON.parse(1))
+  data = JSON.parse(get)
+
+  data.splice(index, 1)
+
+  localStorage.setItem(1, JSON.stringify(data))
+
+  location.reload()
+
+
+
+}
