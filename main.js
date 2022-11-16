@@ -76,7 +76,7 @@ let sshow = (() => {
     insert += `<tr>
             <td>${index+1}</td>
             <td id="text">${item}</td>
-            <td onClick="edit(${index})"><a href="${url}${item}"class"goto"><i class="fa-brands fa-whatsapp"></i></a></td>
+            <td><a href="${url}${item}"class"goto"><i class="fa-brands fa-whatsapp"></i></a></td>
             <td onClick="del(${index})"><i class="fa-solid fa-trash"></i></td>
           </tr>`
 
@@ -100,16 +100,6 @@ let del = (index) => {
   localStorage.setItem(1, JSON.stringify(data))
 
   location.reload()
-
-
-}
-
-
-
-
-let edit = (index) => {
-
-
 
 
 }
