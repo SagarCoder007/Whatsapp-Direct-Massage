@@ -1,6 +1,7 @@
 const country = document.getElementById("country")
 const phone = document.getElementById("phone")
 const button = document.getElementById("btn")
+const url = "https://Wa.me/"
 
 button.addEventListener("click", () => {
   event.preventDefault()
@@ -35,14 +36,16 @@ button.addEventListener("click", () => {
   }
 
 
-
-
-
-
-
-
-
   sshow()
+  country.value = null
+  phone.value = null
+
+
+
+
+
+
+
 
 })
 
@@ -73,7 +76,7 @@ let sshow = (() => {
     insert += `<tr>
             <td>${index+1}</td>
             <td id="text">${item}</td>
-            <td onClick="edit(${index})"><i class="fa-brands fa-whatsapp"></i></td>
+            <td onClick="edit(${index})"><a href="${url}${item}"class"goto"><i class="fa-brands fa-whatsapp"></i></a></td>
             <td onClick="del(${index})"><i class="fa-solid fa-trash"></i></td>
           </tr>`
 
@@ -97,6 +100,15 @@ let del = (index) => {
   localStorage.setItem(1, JSON.stringify(data))
 
   location.reload()
+
+
+}
+
+
+
+
+let edit = (index) => {
+
 
 
 
