@@ -6,7 +6,7 @@ const link = document.getElementById("link")
 
 button.addEventListener("click", () => {
 
-event.preventDefault()
+  event.preventDefault()
 
   phoneVal = phone.value
   countryVal = country.value
@@ -56,7 +56,7 @@ let sshow = (() => {
   data.forEach((item, index) => {
     let table = document.getElementById("table")
     insert += `<tr>
-            <td class="no">${index+1}</td>
+            <td class="no">${index + 1}</td>
             <td class="phone">${item}</td>
             <td  class="chat" ><a href="${url}${item}"class"goto"><i class="fa-brands fa-whatsapp"></i></a></td>
             <td class="del" onClick="del(${index})"><i class="fa-solid fa-trash"></i></td>
