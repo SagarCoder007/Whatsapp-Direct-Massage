@@ -5,8 +5,12 @@ const url = "https://Wa.me/"
 const link = document.getElementById("link")
 
 button.addEventListener("click", () => {
+
+event.preventDefault()
+
   phoneVal = phone.value
   countryVal = country.value
+
 
   if (phoneVal.trim() != 0) {
     country.style.border = "1px solid red"
@@ -52,10 +56,10 @@ let sshow = (() => {
   data.forEach((item, index) => {
     let table = document.getElementById("table")
     insert += `<tr>
-            <td>${index+1}</td>
-            <td id="text">${item}</td>
-            <td><a href="${url}${item}"class"goto"><i class="fa-brands fa-whatsapp"></i></a></td>
-            <td onClick="del(${index})"><i class="fa-solid fa-trash"></i></td>
+            <td class="no">${index+1}</td>
+            <td class="phone">${item}</td>
+            <td  class="chat" ><a href="${url}${item}"class"goto"><i class="fa-brands fa-whatsapp"></i></a></td>
+            <td class="del" onClick="del(${index})"><i class="fa-solid fa-trash"></i></td>
           </tr>`
     table.innerHTML = insert
   })
