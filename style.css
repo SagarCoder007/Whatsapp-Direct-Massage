@@ -25,8 +25,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 
+.numb{
+ padding: 5px 10px ;
+}
 
 .number {
   display: flex;
@@ -84,7 +88,6 @@ th {
 }
 
 .container{
-  background-color: aquamarine;
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -98,6 +101,7 @@ th {
   justify-content: center;
   align-items: center;
   margin-bottom:100px;
+  margin-top: 25px;
 
 
 }
@@ -107,7 +111,37 @@ th {
   transition: 0.5s;
 }
 
+#btn{
+  width: 100%;
+}
 
 table{
   max-width: 100%;
+}
+
+
+
+/* ..............media query...............*/
+
+@media(max-width:384px){
+
+.title{
+  font-size: 24px;
+}
+
+.info{
+  font-size: 17px;
+}
+}
+
+@media(max-width:300px){
+
+  .title{
+    font-size: 20px;
+  }
+  
+  .info{
+    font-size: 14px;
+  }
+
 }
